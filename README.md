@@ -42,18 +42,17 @@ A list of everything that \*could\* go in the `<head>` of your document
 ## Recommended Minimum
 
 Below are the essential elements for any web document (websites/apps):
+ด้านล่างจะเป็นองค์ประกอบสำคัญสำหรับเว็บไซต์ 
 
 ```html
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge"> <!-- † -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!--
-  The above 3 meta tags *must* come first in the <head>
-  to consistently ensure proper document rendering.
-  Any other head element should come *after* these tags.
-
-  † Use the content="ie-edge" tag if your project
-    supports Internet Explorer prior to version 11.
+  tag <meta> 3 อันดับด้านบน ต้องมาก่อน <head> เพราะจะได้แสดงผลของเว็บไซต์ถูกต้อง จะมีดังนี้
+  1. <meta charset="utf-8"> กำหนดการเข้ารหัสให้กับเว็บไซต์
+  2. <meta http-equiv="x-ua-compatible" content="ie=edge">   // ie=edge คือการกำหนดเว็บไซต์ให้สนับสนุน Internet Explorer ก่อนเวอร์ชัน 11
+  3. viewport เป็นการกำหนดให้ปรับเปลี่ยนขนาดเว็บไซต์ให้เข้ากับจอที่แสดงผล โดยจะยืดหดปรับขนาดตามอุปกรณ์ที่ใช้งาน
 
  -->
 <title>Page Title</title>
@@ -65,17 +64,15 @@ Below are the essential elements for any web document (websites/apps):
 
 Valid `<head>` elements include `meta`, `link`, `title`, `style`, `script`, `noscript`, and `base`.
 
-These elements provide information for how a document should be perceived, and rendered, by web technologies. e.g. browsers, search engines, bots, etc.
+Elements เป็นส่วนประกอบสำคัญของ HTML ซึ่งจะเป็นการกำหนดค่าต่างๆ เช่น รูปแบบการแสดงผลของเบราว์เซอร์ และ บอกข้อมูลสำหรับ Search engin,bot และอื่นๆ
 
 ```html
 <!--
-  Set the character encoding for this document, so that
-  all characters within the UTF-8 space (such as emoji)
-  are rendered correctly.
+  ตั้งค่าการถอดรหัสสำหรับเว็บไซต์ ซึ่งปกติแล้วจะใช้การถอดรหัสแบบ UTF-8 เป็นหลักจะทำให้เว็บไซต์แสดงผลภาษาไทยได้
 -->
 <meta charset="utf-8">
 
-<!-- Set the document's title -->
+<!-- title จะแสดงผลใน title bar ของ เบราเซอร์ -->
 <title>Page Title</title>
 
 <!-- Set the base URL for all relative URLs within the document -->
