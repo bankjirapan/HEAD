@@ -39,9 +39,8 @@ A list of everything that \*could\* go in the `<head>` of your document
 - [Author](#author)
 - [License](#license)
 
-## Recommended Minimum
+## ที่เว็บไซต์ของคุณต้องมี
 
-Below are the essential elements for any web document (websites/apps):
 ด้านล่างจะเป็นองค์ประกอบสำคัญสำหรับเว็บไซต์ 
 
 ```html
@@ -78,21 +77,21 @@ Elements เป็นส่วนประกอบสำคัญของ HTML
 <!-- Set the base URL for all relative URLs within the document -->
 <base href="http://example.com/page.html">
 
-<!-- Link to an external CSS file -->
+<!-- โหลดไฟล์ css เข้ามาจากแหล่งอื่นๆ -->
 <link rel="stylesheet" href="styles.css">
 
-<!-- Used for adding in-document CSS -->
+<!-- หากต้องการกำหนด style ใน HTML เฉพาะหน้านั้นๆ -->
 <style>
   /* ... */
 </style>
 
-<!-- JavaScript & No-JavaScript tags -->
+<!-- JavaScript  No-JavaScript tags -->
 <script src="script.js"></script>
 <script>
   // function(s) go here
 </script>
 <noscript>
-  <!-- No JS alternative -->
+  <!-- No JS จะใช้กำหนดเว็บไซต์อีกอย่างหนึ่งซึ่งจะทำงานเมื่อ เว็บไซต์ไม่สนันสนุน JavaScript ที่คุณเขียน -->
 </noscript>
 ```
 
@@ -102,9 +101,10 @@ Elements เป็นส่วนประกอบสำคัญของ HTML
 
 ```html
 <!--
-  The following 3 meta tags *must* come first in the <head>
-  to consistently ensure proper document rendering.
-  Any other head element should come *after* these tags.
+  tag <meta> 3 ข้างล่าง ต้องมาก่อน <head> เพราะจะได้แสดงผลของเว็บไซต์ถูกต้อง มีดังนี้
+  1. <meta charset="utf-8"> กำหนดการเข้ารหัสให้กับเว็บไซต์
+  2. <meta http-equiv="x-ua-compatible" content="ie=edge">   // ie=edge คือการกำหนดเว็บไซต์ให้สนับสนุน Internet Explorer ก่อนเวอร์ชัน 11
+  3. viewport เป็นการกำหนดให้ปรับเปลี่ยนขนาดเว็บไซต์ให้เข้ากับจอที่แสดงผล โดยจะยืดหดปรับขนาดตามอุปกรณ์ที่ใช้งาน
 -->
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -117,27 +117,27 @@ Elements เป็นส่วนประกอบสำคัญของ HTML
 -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
 
-<!-- Name of web application (only should be used if the website is used as an app) -->
+<!-- หากเขียนเป็น WebApplication จำเป็นต้องมี เพื่อบอกว่า WebApp ชื่ออะไร -->
 <meta name="application-name" content="Application Name">
 
-<!-- Theme Color for Chrome, Firefox OS and Opera -->
+<!-- กำหนดสี Theme ให้กับ Chrome, Firefox OS และ Opera-->
 <meta name="theme-color" content="#4285f4">
 
-<!-- Short description of the document (limit to 150 characters) -->
-<!-- This content *may* be used as a part of search engine results. -->
+<!-- บอกรายละเอียดสั้นๆเกี่ยวกับ HTML (จำกัด 150 ตัวอักษร) -->
+<!-- เนื้อหาใน content จะแสดงใน Search engin  -->
 <meta name="description" content="A description of the page">
 
-<!-- Control the behavior of search engine crawling and indexing -->
-<meta name="robots" content="index,follow"><!-- All Search Engines -->
-<meta name="googlebot" content="index,follow"><!-- Google Specific -->
+<!-- ควบคุมพฤติกรรมการรวบรวมข้อมูลและจัดทำดัชนีของเครื่องมือค้นหา Search engin -->
+<meta name="robots" content="index,follow"><!-- อนุญาติทั้งหมดของ Seacrh engin ให้เก็บข้อมูล -->
+<meta name="googlebot" content="index,follow"><!-- หากใช้เฉพาะ google -->
 
-<!-- Tells Google not to show the sitelinks search box -->
+<!-- หากต้องการไม่ให้ Google แสดงช่องค้นหา -->
 <meta name="google" content="nositelinkssearchbox">
 
-<!-- Tells Google not to provide a translation for this document -->
+<!-- หากต้องการไม่ให้ Google แปลภาษาเว็บของคุณ -->
 <meta name="google" content="notranslate">
 
-<!-- Verify website ownership -->
+<!-- ยืนยันความเป็นเจ้าของเว็บไซต์ -->
 <meta name="google-site-verification" content="verification_token"><!-- Google Search Console -->
 <meta name="yandex-verification" content="verification_token"><!-- Yandex Webmasters -->
 <meta name="msvalidate.01" content="verification_token"><!-- Bing Webmaster Center -->
@@ -145,31 +145,31 @@ Elements เป็นส่วนประกอบสำคัญของ HTML
 <meta name="p:domain_verify" content="code_from_pinterest"><!-- Pinterest Console-->
 <meta name="norton-safeweb-site-verification" content="norton_code"><!-- Norton Safe Web -->
 
-<!-- Identify the software used to build the document (i.e. - WordPress, Dreamweaver) -->
+<!-- เป็นระบุซอฟต์แวร์ที่ใช้ในการสร้างเอกสาร (เช่น - WordPress, Dreamweaver) ไม่จำเป็นต้องใส่ก็ได้-->
 <meta name="generator" content="program">
 
-<!-- Short description of your document's subject -->
+<!-- คำอธิบายสั้นๆเกี่ยวกับเว็บของคุณ -->
 <meta name="subject" content="your document's subject">
 
-<!-- Gives a general age rating based on the document's content -->
+<!-- ให้คะแนนอายุโดยทั่วไปตามเนื้อหาของเอกสาร -->
 <meta name="rating" content="General">
 
-<!-- Allows control over how referrer information is passed -->
+<!-- อนุญาตให้มีการควบคุมวิธีส่งข้อมูลผ่านผู้อ้างอิง -->
 <meta name="referrer" content="no-referrer">
 
 <!-- Disable automatic detection and formatting of possible phone numbers -->
 <meta name="format-detection" content="telephone=no">
 
-<!-- Completely opt out of DNS prefetching by setting to "off" -->
+<!-- เลือกไม่ใช้การดึงข้อมูล DNS ล่วงหน้าโดยตั้งค่าเป็น "off" -->
 <meta http-equiv="x-dns-prefetch-control" content="off">
 
-<!-- Stores a cookie on the client web browser for identification purposes -->
+<!-- เก็บคุกกี้ไว้ในเว็บเบราเซอร์ของไคลเอ็นต์ เพื่อระบุตัวตน -->
 <meta http-equiv="set-cookie" content="name=value; expires=date; path=url">
 
-<!-- Specifies the document to appear in a specific frame -->
+<!-- ระบุของเขตเอกสารไว้ในกรอบ -->
 <meta http-equiv="Window-Target" content="_value">
 
-<!-- Geo tags -->
+<!-- Geo tags เป็น tag สำหรับเกี่ยวภูมิศาสตร์ -->
 <meta name="ICBM" content="latitude, longitude">
 <meta name="geo.position" content="latitude;longitude">
 <meta name="geo.region" content="country[-state]"><!-- Country code (ISO 3166-1): mandatory, state code (ISO 3166-2): optional; eg. content="US" / content="US-NY" -->
